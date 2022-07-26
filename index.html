@@ -38,11 +38,7 @@
                 <a role="button" name="submit" id="post-submit" class="btn btn-primary btn-lg col">Submit Post</a>
             </div>
         </form>
-        <h2 class="my-4">Blog Posts : </h2>
-        <!-- <div class="postremoval">
-            <input class="form-control" type="text" name="posttitle" id="removeposttitle">
-            <a role="button"  class="btn btn-danger btn-sm" id="removepostbutton">Remove</a>
-        </div> -->
+        <h2 class="my-4">Blog Posts : </h2>  
         <!-- Posts Will be added here -->
         <ul class="list-group list-group-horizontal d-flex flex-wrap" id="posts-ul">
             <li class="list-item list-group-item d-flex flex-column w-50 mw-50">
@@ -56,32 +52,36 @@
                     <p class="posted-text fs-16 fw-400">Text</p>
                 </div>
                 <hr>
+
                 <div class="posted-info d-flex align-items-center justify-content-center" style="gap:1rem;">
-                    <p class="fw-500 fs-10">Tags: <p class="posted-tags fw-400 fs-10">Meow,Maow</p> </p>
-                    <p class="fw-500 fs-10">Author : <p class="posted-author fw-400 fs-10">Sepehr</p> </p>
+                    <p class="fw-500 fs-10">Tags: <p class="posted-tags fw-400 fs-10">Tag1,Tag2</p> </p>
+                    <p class="fw-500 fs-10">Author : <p class="posted-author fw-400 fs-10">Name</p> </p>
                     <p class="fw-500 fs-10">Likes : <span class="posted-likes badge bg-danger rounded-pill">12</span></p>
                 </div>
                 <hr>
+
                 <div class="posted-buttons d-flex justify-content-between">
                     <a role="button" class="posted-button posted-button-like btn btn-warning btn-sm text-danger fs-36">♥ Like</a>
                     <a role="button"  class="posted-button posted-button-comment btn btn-secondary btn-sm">Comment</a>
                     <a role="button"  class="posted-button posted-button-edit btn btn-info btn-sm">Edit</a>
-                    <a role="button"  class="posted-button posted-button-remove btn btn-danger btn-sm" name="">Remove</a>
+                    <a role="button"  class="posted-button posted-button-remove btn btn-danger btn-sm">Remove</a>
                     
                 </div>
             </li>
 
     </main>
+
+    <!-- Bootstrap Toast -->
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" >
-        <div class="toast-header">
-        <strong class="me-auto">Alert</strong>
-        <a role="button"  class="btn-close" data-bs-dismiss="toast" aria-label="Close" id="toast-close-btn"></a>
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" >
+            <div class="toast-header">
+            <strong class="me-auto">Alert</strong>
+            <a role="button"  class="btn-close" data-bs-dismiss="toast" aria-label="Close" id="toast-close-btn"></a>
+            </div>
+            <div class="toast-body" id="toast-text">
+            Hello, world! This is a toast message.
+            </div>
         </div>
-        <div class="toast-body" id="toast-text">
-        Hello, world! This is a toast message.
-        </div>
-    </div>
     </div>
 </body>
 </html>

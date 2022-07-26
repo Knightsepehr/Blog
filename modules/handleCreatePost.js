@@ -1,4 +1,3 @@
-import { removePost } from "./handleRemovePost.js";
 export const PostTitle = document.getElementById("post-title");
 export const PostImage = document.getElementById("post-image");
 export const PostText = document.getElementById("post-text");
@@ -11,7 +10,7 @@ const savedLCPosts = localStorage.getItem("postList");
 const parsesavedLCPosts = JSON.parse(savedLCPosts) || [];
 export let savedPosts = [...parsesavedLCPosts];
 
-export function suss() {
+export function handle() {
     console.log(savedPosts);
     savedPosts.forEach(
         function (post) {
@@ -57,7 +56,7 @@ export function createPost(ptitle,pimage,ptext,tags,pauthor,pnumberoflikes) {
     innerTitleParagraph.classList.add("posted-title");
     innerTitleParagraph.classList.add("fw-400");
     innerTitleParagraph.classList.add("fs-16");
-    innerTitleParagraph.innerText = newPost.title; // ADDED TITLE TO ITS ELEMENT
+    innerTitleParagraph.innerText = newPost.title; 
     upperTitleparagraph.appendChild(innerTitleParagraph);
     
     listItem.appendChild(document.createElement("hr"));
@@ -68,13 +67,13 @@ export function createPost(ptitle,pimage,ptext,tags,pauthor,pnumberoflikes) {
     listItem.appendChild(postedContentDiv);
     
     const PostedImage = document.createElement("img");
-    PostedImage.src = newPost.image; //ADDED IMAGE TO ITS ELEMENT
+    PostedImage.src = newPost.image;
     
     const PostedText = document.createElement("p");
     PostedText.classList.add("posted-text");
     PostedText.classList.add("fs-16");
     PostedText.classList.add("fw-400");
-    PostedText.innerText = newPost.text; // ADDED TEXT TO POST
+    PostedText.innerText = newPost.text;
     postedContentDiv.appendChild(PostedImage);
     postedContentDiv.appendChild(PostedText);
     
@@ -135,10 +134,10 @@ export function createPost(ptitle,pimage,ptext,tags,pauthor,pnumberoflikes) {
 
     
     listItem.innerHTML += `<div class="posted-buttons d-flex justify-content-between">
-    <a role="button" class="posted-button posted-button-like btn btn-warning btn-sm text-danger fs-36" id="${ptitle}" name="${pnumberoflikes}">♥ Like</a>
+    <a role="button" class="posted-button posted-button-like btn btn-warning btn-sm text-danger fs-36">♥ Like</a>
     <a role="button"  class="posted-button posted-button-comment btn btn-secondary btn-sm">Comment</a>
     <a role="button"  class="posted-button posted-button-edit btn btn-info btn-sm">Edit</a>
-    <button role="button"  class="posted-button posted-button-remove btn btn-danger btn-sm" id="${ptitle}">Remove</button>
+    <button role="button"  class="posted-button posted-button-remove btn btn-danger btn-sm">Remove</button>
     </div>`;
     posts.push(newPost);
     localStorage.setItem("postList",JSON.stringify(posts));

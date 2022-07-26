@@ -1,15 +1,8 @@
-import * as logger  from './modules/logger.js';
 import * as toast from './modules/toast.js';
 import * as postcreator from './modules/handleCreatePost.js'
-import * as postremover from './modules/handleRemovePost.js'
 
-// let toastcloser = document.getElementById("toast-close-btn");
 let toastchanger = document.getElementById("post-submit");
 
-// toastcloser.addEventListener("click",() => {
-//         console.log("CloseToast Ran index.js");
-//         toast.closeToast();
-//     })
 toastchanger.addEventListener("click",() => {
         console.log("ToastChanger Ran index.js");
         console.log(postcreator.savedPosts)
@@ -45,15 +38,9 @@ toastchanger.addEventListener("click",() => {
         }
 
 })
-// Without following three lines , when the button is pressed for the first time it wont show the toast idk why
 document.addEventListener("DOMContentLoaded", function(){
-    postcreator.suss();
-    toast.showToast();
-    
+    postcreator.handle();
+    toast.showToast(); 
 });
 
-// Remove and like btn left to be completed later on
-// document.getElementById("removepostbutton").addEventListener("click",function() {
-//     postremover.removePost(document.getElementById("removeposttitle").value);
-// })
 
